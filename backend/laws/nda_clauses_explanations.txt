@@ -1,0 +1,744 @@
+
+========== PAGE 1 ==========
+Non-Disclosure Agreements and Confidentiality Clauses
+Practice Note Series on Indian Contract Law
+M P Ram Mohan
+Siddhartha Shukla
+Julie Farley
+Prem Vinod Parwani
+========== PAGE 2 ==========
+W. P. No. 2025-12-01
+Non-Disclosure Agreements and Confidentiality Clauses
+Practice Note Series on Indian Contract Law
+M P Ram Mohan
+Siddhartha Shukla
+Julie Farley
+Prem Vinod Parwani
+December 2025
+The main objective of the working paper series of the IIMA is to help faculty
+members, research staff and doctoral students to speedily share their
+research findings with professional colleagues and test their research
+findings at the pre-publication stage. IIMA is committed to maintain academic
+freedom. The opinion(s), view(s) and conclusion(s) expressed in the working
+paper are those of the authors and not that of IIMA.
+========== PAGE 3 ==========
+Non-Disclosure Agreements and Confidentiality Clauses
+Practice Note Series on Indian Contract Law
+M P Ram Mohan* Siddhartha Shukla** Julie Farley *** and Prem Vinod Parwani****
+Background
+This note aims to provide an overview of Non-Disclosure Agreements and Confidentiality clauses
+contrasting Indian law with key issues under English law. It examines the doctrinal framework
+protecting confidential information, which is a “patchwork of remedies” derived from contract
+law, intellectual property law, and common law. It defines and distinguishes the different forms of
+obligations to protect confidential information, outlines the remedies for breach and sets out some
+practical drafting considerations that are peculiar to the considerations of business parties in
+NDAs.
+___________
+* Professor, Indian Institute of Management Ahmedabad
+** Partner, Herbert Smith Freehills Kramer LLP
+*** Knowledge Lawyer, Herbert Smith Freehills Kramer LLP
+**** Researcher, Indian Institute of Management Ahmedabad; & National Law School of India
+University
+Acknowledgements: The note is part of the Herbert Smith Freehills Kramer (HSF Kramer) LLP
+and Indian Institute of Management Ahmedabad (IIMA) research project aimed at developing
+Practice Notes on Indian Contract Law that academically illuminates key contractual and
+commercial issues relevant to Indian businesses.
+1
+========== PAGE 4 ==========
+TABLE OF CONTENTS
+Introduction ..................................................................................................................................... 3
+1. Doctrinal Framework in Indian Law ....................................................................................... 4
+1.1. The Indian Contract Act 1872 .............................................................................................. 4
+1.2. Protection of Intellectual Property ....................................................................................... 6
+1.3. Common Law Duty of Fidelity ............................................................................................ 7
+2. Remedies for Breach ................................................................................................................... 9
+2.1. Injunctive Relief................................................................................................................... 9
+2.2. Request for In-Camera Proceedings & Establishment of Confidentiality Clubs ............... 10
+2.3. Damages or Account of Profits .......................................................................................... 10
+2.4. Indemnities ......................................................................................................................... 11
+2.5. Anton Piller orders ............................................................................................................. 12
+3. Drafting NDAs .......................................................................................................................... 12
+3.1. How to Define ‘Confidential Information’? ...................................................................... 13
+3.2. Duration of the Confidentiality Obligations ...................................................................... 16
+3.3. To Whom Confidential Information is Disclosed .............................................................. 17
+3.4. No Representation or Warranty ......................................................................................... 18
+3.5. Retention, Return and Destruction Policies ....................................................................... 18
+3.6. Drafting for Remedies ........................................................................................................ 19
+3.7. Takeover Regulations and Confidentiality ........................................................................ 20
+3.8. The role of Artificial Intelligence and technological tools in the NDA process ............... 21
+4. International Practice Points ................................................................................................. 22
+Conclusion .................................................................................................................................... 23
+2
+========== PAGE 5 ==========
+INTRODUCTION
+1. Non-disclosure agreements (‘NDAs’) or confidentiality agreements are staple commercial
+tools to protect the sharing of commercially sensitive information.1 Fundamentally, these
+are contracts where the ‘Recipient’ is obligated to keep certain information disclosed by the
+‘Discloser’ confidential. Depending on the context of the agreement and the information
+being disclosed, NDAs can provide for unilateral or mutual obligations.
+2. NDAs are routinely used in several different contexts, such as in M&A and investments,
+employment agreements and commercial contracts. The confidentiality obligations may
+either form part of a larger contract or be a standalone agreement. Typically, a standalone
+NDA will include more detail than a confidentiality clause included in an agreement, but
+this note treats the two as the same, and for convenience, refers to both as an ‘NDA’.
+3. As is the case with most subjects of commercial practice, they remain undertheorised and
+scantly discussed in scholarship. This practice note covers both the doctrinal and the drafting
+considerations of such agreements and seeks to assist practitioners in drafting context-
+specific NDAs, focusing primarily on Indian law but with an overlay of international
+practices.
+4. Part I examines the doctrinal considerations in Indian law. In particular, it examines the
+legal framework governing confidentiality obligations under contract and under common
+law. Part II examines the remedies that could result from a breach of such an NDA. In the
+context of the remedies and legal framework, Part III lays out and rationalises key sample
+clauses that demonstrate the commercial considerations and best practices of drafting
+NDAs, balancing both the Discloser's and the Recipient’s perspective. Obviously, the
+perspectives of the Discloser and the Recipient will be very different, and a full
+consideration of their respective positions is beyond the scope of this note. Part IV sets out
+a brief summary of English law and practice in relation to NDAs.
+1 Law Commission of India, Trade Secrets and Economic Espionage (Law Com No 289, 2024) [2.20].
+3
+========== PAGE 6 ==========
+1. DOCTRINAL FRAMEWORK IN INDIAN LAW
+5. In India, confidential information is protected by a “patchwork of remedies” – contract,
+intellectual property and equity2 – each of which is explored below.
+1.1. The Indian Contract Act 1872
+6. In India, the jurisprudence on confidentiality obligations has developed by and large in the
+realm of employment law. Employers can use NDAs to prevent the leakage of any
+information obtained by an employee in the course of employment. The major point of
+litigation emerges when employers approach courts to restrain employees from joining
+competitors, given concerns that confidential information may be divulged.3
+7. It is settled that prohibitions on the sharing of confidential information can operate both,
+during and after the termination of employment contracts.4 The Indian Supreme Court in
+Krishan Murgai cites an English case to comment that an employer “cannot stipulate
+freedom from competition. But he can protect his trade secrets or his confidential
+information.”5
+8. Restrictions on sharing confidential information may be a part of non-compete agreements
+but these are legally different. Non-competes are agreements where the employee is
+prevented from joining a competitor for a certain period. It is well‑established in Indian
+law that that the enforceability of non‑compete clauses depends on whether it is agreed to
+in a commercial relationship or in an employer-employee relationship. In commercial
+contexts, these are enforceable only if they are reasonable in protecting a legitimate
+business interest and are proportionate in scope, geography, and duration.6 Restrictions
+2 Law Commission of India, Trade Secrets and Economic Espionage (Law Com No 289, 2024) 98.
+3 Niranjan Shankar Golikari v The Century Spinning and Mfg Co Ltd [1967] SCR 2 378; American Express Bank
+Ltd. v Priya Puri (2006) 3 LLN 217 (Delhi High Court, 2006).
+4 Superintendence Co. of lndia v Krishan Murgai (1981) 2 SCC 246 [22]; (1981) 2 SCC 246 (Supreme Court of
+India) [22]; BLB Institute of Financial Markets Ltd v Ramakar Jha (2009) OMP 241/2008 (Delhi High Court) [42];
+Bombay Dyeing and Manufacturing Co Ltd v Mehar Karan Singh (2010) 7 Mah LJ 48.
+5 Superintendence Company of India (P) Ltd v Krishan Murgai [1980] AIR 1717 [22]; Polaris Software Lab.
+Limited Rep v Suren Khiwadkar (2003) 3 MLJ 557 [26] – [27].
+6 Fl Smidth Pvt. Ltd. v Secan Invescast (India) Pvt. Ltd (2013) SCC Online Mad 389 [10];.Superintendence Co. of
+lndia v Krishan Murgai (1981) 2 SCC 246 [22]; Niranjan Shankar Golikari v The Century Spinning and Mfg Co Ltd
+[1967] SCR 2 378.
+4
+========== PAGE 7 ==========
+beyond six months are often viewed as overly restrictive and difficult to enforce. Broadly,
+this position stands both — under Indian law and English law.7 Indian law, as we will see,
+requires a more detailed balancing test. However, confidentiality restrictions can continue
+to operate in perpetuity, even if the employee joins a competitor.8 This is because the
+Courts recognise a legitimate business interest in the life-long protection of confidential
+information – trade secrets are the foremost example of this. Under English law, trade
+secrets can also be protected in perpetuity. However, the position is less clear in respect of
+confidential information which does not meet the threshold to qualify as a trade secret. In
+these circumstances, the English Court of Appeal has stated that confidential information
+can only be protected if properly classified as a trade secret.9 However, there has been
+considerable judicial commentary on this judgment, with several cases casting doubt on
+this decision10. As such, employers should exercise care when drafting English law-
+governed confidentiality clauses which are intended to survive following the termination
+of employment.
+9. However, it is important to be aware that public policy may, in certain circumstances,
+override a contractual duty of confidentiality, for instance where it serves to prevent
+disclosure of information in relation to criminal activity,11 or where there is a danger to
+public health.12 There is a risk that broadly drafted NDAs may fall foul of Indian public
+policy, and thus be declared invalid. This arises in a few situations: such as, where the
+NDA includes information that already exists in the public domain. If publicly available
+information is included in a clause defining confidential information, it would suggest that
+there is no real interest in protecting the information; rather, it is an attempt to unjustifiably
+7 See Peninsula Securities Ltd v Dunnes Stores (Bangor) Ltd [2020] UKSC 36, [2021] AC 1014 [45]–[47], [51]
+(Lord Wilson) for the ‘trading society test’ for noncompete clauses — namely, whether the clause has become an
+accepted norm of commercial transactions.
+8 RP Partners v Kumarpal, O.A. Nos. 321, 322 and 326 of 2012 (Madras HC, 23 April 2012) (Vinod K Sharma J).
+[10], [19]; Arun Rambhai Desai v Deepak Nitrite Ltd, Cr A No 242 of 2024 (Guj HC, 10 June 2025) (Sanjeev J
+Thaker J) [62] – [64].
+9 Faccenda Chicken Ltd v Fowler [1987] Ch 117
+10 Lansing Linde Ltd v Kerr [1991] ICR 428; Lancashire Fires Ltd v SA Lyons & Co Ltd [1997] IRLR 113l; FSS
+Travel & Leisure Systems Ltd v Johnson [1999] FSR 505.
+11 Gartside v Outram [1857] 26 LJ Ch (NS) 113).
+12 Dixon v North Bristol NHS Trust [2022] EWHC 1871 (QB).
+5
+========== PAGE 8 ==========
+restrain trade.13 Thus, even information contractually agreed upon as confidential will not
+receive such protection, since the nature of the information ceases to be confidential.14 For
+instance, in Steller Technology, the employer sought to restraint disclosure of information
+by a former employee. However, the Court held that information of the employer’s
+customers was publicly advertised on the website, and thus could not be classified as
+confidential information.15 As long as the information marked confidential in an NDA is a
+reasonable restraint which seeks to protect the employer’s ‘trade’, it would not be a restraint
+of trade.16To this extent, whether or not the information is already in the public domain
+affects the validity of the protection when tested against Section 27 of the Contract Act.
+1.2. Protection of Intellectual Property
+10. Even in the absence of a contractual relationship, intellectual property law has been used as
+a basis to protect certain information as confidential. In several cases, injunctions have been
+granted against copyrighted and trademarked material, oftentimes paired with the
+terminology of a freestanding duty of confidence. For instance, in Zee Telefilms, the Court
+held that Zee's creation of a television series based on copyrighted material amounted to a
+‘breach of confidentiality’ because the plaintiffs disclosed their movie concept to Zee in
+circumstances that clearly imported an obligation of confidence.17
+11. While an equitable claim for breach of confidentiality and an injunction for copyright
+infringement are analytically distinct, it is common to see the two are used in tandem.18 The
+next section explores this equitable claim of confidentiality.
+13
+Law Commission of India, Trade Secrets and Economic Espionage (Law Com No 289, 2024) [5.9]; Stellar
+lnformation Technology Private Ltd. v Mr. Rakesh Kumar (2016) 234 DLT l14.
+14 Narendra Mohan Singh and Manish Jha v Ketan Mehta No 778 of 2015 (Bombay High Court, 2015) [14], [19].
+15 Stellar lnformation Technology Private Ltd. v Mr. Rakesh Kumar (2016) 234 DLT l14 [9] – [14].
+16
+FLSmidth Pvt. Ltd. v Secan Invescast (2012) SCC OnLine Mad 2516 [20].
+17 Anil Gupta v Kunal Dasgupta (2002) 97 DLT 257 [90] – [91]; Zee Telefilms Ltd & Film v Sundial
+Communications Pvt Ltd (2003) 3 Mah LJ 695 [20].
+18 Law Commission of India, Trade Secrets and Economic Espionage (Law Com No 289, 2024) [5.17]; Tarun
+Wadhwa v. Saregama India Ltd (2021) 88 PTC 423; Burlington Home Shopping Pvt. Ltd. vs Rajnish Chibber (1995)
+35 DRJ 335.
+6
+========== PAGE 9 ==========
+1.3. Common Law Duty of Fidelity
+12. While there is no statutory framework in India for protecting confidential information,19
+judicial interpretations have borrowed from the common law duty of fidelity. The origin of
+the common law duty of fidelity lies in the landmark case of Saltman Engineering, where
+the English Court of Appeal held that it “would not matter in the least bit whether there
+was a contract”.20 While some Courts commonly reference both equitable and contractual
+sources of confidentiality, it is important to note that these are different concepts.21
+13. By and large, most such cases appear in the context of intellectual property infringement,22
+though there is nothing in the nature of the duty that restricts its operation to such cases.
+The test that has been used in several such cases is:23
+(1) that the information was of a confidential nature;
+(2) that the information was communicated in circumstances importing an obligation
+of confidence; and
+(3) that there has been an unauthorised use of the information to the detriment of the
+person communicating it
+14. These tests are explained as follows: under the first part of the test, two elements must be
+established. First, the information must be identified with precision. Vague and
+insufficiently developed information will not be eligible for protection.24 Second, it must
+be established that the information, by nature, was confidential and not already publicly
+available.25 In commercial contexts, confidential information has been judicially defined
+19 While the government has mooted the idea of the Protection of Trade Secrets Bill 2024, this has not yet come to
+fruition. This Bill would codify and define a ‘trade secret’.
+20 Saltman Engineering Co. v Cambell Engineering Co (1948) RFC 203.
+21 Prashant Reddy, ‘The “Other IP Right”: Is it Time to Codify the Indian Law on Protection of Confidential
+Information?’ (2020) 5(1) Journal of National University of Delhi 1.
+22 Zee Telefilms Ltd & Film v Sundial Communications Pvt Ltd (2003) 3 Mah LJ 695; Emergent Genetics India Pvt
+Ltd v Shailendra Shivam (2011) 125 DRJ 173.
+23 Talbot v General Television Corporation Pvt. Ltd (1981) RPC 1
+24 Law Commission of India, Trade Secrets and Economic Espionage (Law Com No 289, 2024) [5.14]; Anil Gupta v
+Kunal Dasgupta (2002) 1 Del 250; Tarun Wadhwa v Saregama India Ltd (2021) 88 PTC 423; Fraser v Thames TV
+[1984] 1 QB 44.
+25 John Richard Brady v Chemical Process Equipments (P) Ltd (1987) SCC OnLine Del 236 [25] – [26].
+7
+========== PAGE 10 ==========
+as “information which, if disclosed to a competitor, would be liable to cause real or
+significant harm to the owner of the secret.”26 An agreement between the parties that
+already establishes such information as confidential cannot be contested unless the
+information is already available in the public domain or subsequently becomes publicly
+available without any fault of the Recipient.27 In the context of intellectual property, it has
+been held that commercially sensitive information such as technical drawings imparted in
+the course of employment would constitute ‘confidential information.’28 In other instances,
+information such as “pricing policies, marketing strategies, customer lists and projected
+capital investments” has been held to be confidential by nature.29
+15. Under the second limb, the existence of a relationship ‘importing confidentiality’ must be
+established. This is often easily met in employment and intellectual property contexts. It is
+natural in these contexts that one party is placed in a relationship where sensitive
+information may be disclosed. In the employment context, it has been held that though the
+contract does not contain an express stipulation of confidentiality, an “implied duty of good
+faith” exists in employment contracts.30 According to this, the employee would be
+prohibited from divulging confidential information. Moreover, the Indian regime also
+borrows from common law31 in extending a relationship of confidentiality to third parties
+(i.e., those who gain access to the confidential information of the Discloser, despite not
+being a direct Recipient).32 Thus, even third parties who disclose confidential information
+can be injuncted from doing so.
+26 American Express Bank, Ltd. v Priya Puri (2006) 3 LLN 21 7; Law Commission of India, Trade Secrets and
+Economic Espionage (Law Com No 289, 2024) 100.
+27 VFS Global Services Pvt. Ltd. v Suprit Roy (2007) SCC OnLine Bom 1083 [18].
+28 John Richard Brady v Chemical Process Equipments (P) Ltd (1987) SCC OnLine Del 236 [37].
+29 Petronet LNG Ltd v Indian Petro Group (2009) CS (OS) No 1102/2006 (Delhi High Court) [51]; Hi-Tech Systems
+& Services Ltd vs Suprabhat Ray (2015) AIR 2015 Cal 261.
+30BLB Institute of Financial Markets v Ramakar Jha (2008) DLT 154 121 [38] – [39].
+31 AG v Guardian Newspapers Ltd (1990) 1 AC 109, 260: “It is a general rule of law that a third party who comes
+into possession of confidential information which he knows to be such, may come under a duty not to pass it on to
+anyone else.” (per Lord Keith). For a similar position in EU law, also see Directive (EU) 2016/943 of the European
+Parliament and of the Council of 8 June 2016 on the protection of undisclosed know-how and business information
+(trade secrets) against their unlawful acquisition, use and disclosure [2016] OJ L157/1, art 14.
+32 Petronet LNG Ltd v Indian Petro Group (2009) CS (OS) No 1102/2006 (Delhi High Court)
+8
+========== PAGE 11 ==========
+16. Under the final part of the test, a party must show cogent evidence (at the very least, to a
+prima facie standard) of the disclosure of confidential information.33 Broadly, a Court
+conducts a form of balancing analysis. In one instance, the Delhi High Court has
+refashioned the common law test, referring to the need for a proportionality exercise in
+upholding a claim for breach of confidence. It held that a court must balance “competing
+claims for right to confidentiality and the need for publication of the information, in the
+given circumstances of individual cases.”34 In another instance, the Court simply applied
+the balance of convenience test in granting an injunction.35 Broadly, however, a form of
+harm or detriment must be established to claim a breach of confidence under the common
+law.
+2. REMEDIES FOR BREACH
+2.1. Injunctive Relief
+17. An injunction is the primary remedy against a breach of confidential information, since a
+confidentiality obligation is only of value if the Discloser is able to prevent the Recipient
+from breaching the obligation prior to any disclosure; once the information has been
+disclosed in breach of the obligation the damage has already occurred. However,
+injunctions may be of limited use if the Discloser does not know that the Recipient is about
+to breach its obligations to keep the information confidential.36 On the other hand, while
+damages can be sought concurrently, these serve a compensatory purpose.37 Injunctions
+more directly address leakage and breaches of confidential information. For this reason, as
+we will see, drafting should reflect the parties' wish that injunctive relief should be
+available. Though the parties would continue to retain this as a statutory right (by virtue of
+the Civil Procedure Code and Specific Relief Act), the prima facie case to have an
+injunction granted is more easily established where there is a contractual agreement of
+33 Sandhya Organic Chemicals P. Ltd. v United Phosphorous Ltd (1997) AIR 1997 Guj 177 [16].
+34 Petronet LNG Ltd v Indian Petro Group (2009) CS (OS) No 1102/2006 (Delhi High Court) [56].
+35 John Richard Brady v Chemical Process Equipments (P) Ltd (1987) SCC OnLine Del 236 [37] – [38].
+36 Mitchell C Shelowitz, ‘What Every In-House Lawyer Should Know About Non-Disclosure Agreements:
+Protecting Company Intellectual Property and Strategic Non-Public Business Information’ (Paper presented at the
+Global Corporate Counsel Association Ninth Annual Conference, Versailles, 24–25 June 2002) 8.
+37 Indian Contract Act 1872, ss.73.
+9
+========== PAGE 12 ==========
+confidentiality between the parties.38 To obtain an injunction, a party must establish a prima
+facie case, the likelihood of irreparable injury and show that the balance of convenience
+lies in their favor.39 The English courts have also been known to grant injunctions in order
+to prevent disclosure of confidential information, both by means of interim and permanent
+injunctions.40 They have also been known to order the destruction of confidential
+information.41
+2.2. Request for In-Camera Proceedings & Establishment of Confidentiality Clubs
+18. In disputes involving NDAs, parties may seek protective mechanisms such as
+confidentiality clubs and in camera proceedings to safeguard commercially sensitive
+information.42 These proceedings would be held privately, and thus protect the confidential
+nature of the subject matter. While Indian procedural law does not explicitly codify these
+devices, 43 courts have repeatedly affirmed their inherent jurisdiction to limit publicity
+where it is necessary for “the fair administration of justice” or where publicity would itself
+operate as an “instrument of injustice.”44
+2.3. Damages or Account of Profits
+19. General damages can be claimed where a breach of contract is established, regardless of
+whether or not the agreement stipulates damages.45 Any provision for Liquidated Damages
+will be enforceable only to the extent that the sum stipulated represents a genuine pre-
+38 Escorts Const. Equipment Ltd. v Action Const. Equipment P. Ltd (1998) AIR 1999 Del 73 [22] - [33].
+39 Code of Civil Procedure 1908, O XXXIX rr 1–2; Gujarat Bottling Co. Ltd. v. Coca Cola Co (1995) 5 SCC 545,
+550.
+40 Sectrack NV v Satamatics Ltd [2007] EWHC 3003; Penwell Publishing (UK) Ltd v Ornstein [2007] EWHC 1570
+(QB).
+41 Arthur J Gallagher (UK) Ltd v Skriptchenko [2016] EWHC 603 (QB).
+42 Confidentiality clubs are agreements that restrict the dissemination of confidential information only between an
+authorized group of parties (i.e., a club). This is used frequently in competition and intellectual property proceedings
+— see for instance Telefonaktiebolaget LM Ericsson v Xiaomi Technology (2017) SCC Online Del 11069, where a
+confidentiality club was constituted to protected the plaintiffs information regarding patents in the course of
+litigation.
+43 Code of Civil Procedure 1908, s.151.
+44 Naresh Shridhar Mirajkar v State of Maharashtra (1966) AIR SC 1; Janaki Ballav v Bennet Coleman and Co Ltd
+(1989) AIR 1989 Ori 216.
+45 Indian Contract Act 1872, ss. 73 and 74.
+10
+========== PAGE 13 ==========
+estimate of loss and passes the test of reasonableness.46 On the other hand, if the
+confidential information is misused, any profits derived from the disclosure of confidential
+information can be disgorged.47
+2.4. Indemnities
+20. The Recipient may agree to indemnify the Discloser for any loss arising out of a breach of
+the confidentiality obligations. This approach has two advantages over a claim of damages.
+Firstly, the claim crystallises on loss – one does not need to wait for litigation to claim an
+indemnity, whereas one must wait for a Court to award damages to have a monetary
+claim.48 A breach is not required to be proved either, though parties can draft indemnities
+such that even a breach of contract triggers an indemnity claim. Secondly, the Discloser is
+not required to prove that a loss has occurred. Thus, establishing the claim is less onerous.49
+However, indemnities are not standard in NDAs, and unlikely to be agreed by the
+Recipient.50 Moreover, the Discloser should be aware that under English law, indemnities
+are treated as debt claims. The effect of this is that even if the Recipient does agree to the
+indemnity, they can negotiate a cap on their liability which could be far lower than the loss
+sustained by the Discloser, meaning it may not be a very satisfactory remedy.
+46 See M P Ram Mohan, Gaurav Ray, Promode Murugavelu & Jeeri Sanjana Reddy, ‘Liquidated Damages in India:
+Concepts, Enforceability, and Drafting Considerations’ (IIMA Working Paper, December 2024) 1, 11.
+47 E-Merge Tech Global Services (P) Ltd v M.R. Vidhyasagar (2024) CS (Comm Div) No 258 of 2020 (Mad HC)
+[6].
+48 Gajanan Moreshwar Parelkar v. Moreshwar Madan Mantri (1942) 44 Bom LR 704, 706.
+49 Ultratech Cement Ltd v Sunfield Resources Pty Ltd (2016) Appeal No 881 of 2005 (Bom HC) [58] – [59]. The
+Bombay High Court discussed this distinction extensively – in Ultratech Cement, the issue before the Court was
+whether the claim for demurrage in a charterparty was in the nature of indemnity or liquidated damages. This would
+affect whether proof of loss would be required. Where the claim is damages, the claiming party would have to
+demonstrate the occurrence of a loss. On the other hand, an indemnity could be claimed as long as the existence of a
+liability in the scope of the contracted indemnity can be demonstrated – one need not even incur loss to bring a claim
+of indemnity. The Court examined the substance and commercial intent of Clause 10(v), which entitled the charterer
+to demurrage payments from the charterparty contractor. It held that the demurrage was in the nature of damages,
+since the transaction demonstrated that it was a pre-agreed sum aimed at compensating for delays, and the
+documents required to invoke the clause showed that there was no requirement to demonstrate the existence of a
+loss.
+50 Investment Property Forum, Non-Disclosure Agreement & Exclusivity Agreement: Guidance Notes (IPF, 2019) cl
+6.2 <https://www.ipf.org.uk/resourceLibrary/non-disclosure-agreement---exclusivity-agreement.html> accessed 25
+August 2025.
+11
+========== PAGE 14 ==========
+2.5. Anton Piller orders
+21. A plaintiff may apply for an Anton Piller order, also known as a search order, which permits
+it to enter the premises of the defendant without prior notice to search for and seize
+confidential information.51 By nature, it is a drastic preventive remedy, and thus, a high
+threshold must be satisfied to successfully claim such an order.52 In order to be successful,
+the plaintiff must prove that they have "an extremely strong prima facie case", that the
+defendant's actions have resulted in very serious damage to the applicant's interests, and
+that there is clear evidence of "incriminating documents or things" that are in the possession
+of the defendant, combined with a real possibility of destruction or disposal of that material
+before an application can be made on notice. The plaintiff must further prove that the harm
+likely to be caused to the defendant and its affairs by the granting of the order is not
+excessive or out of proportion.53 These orders are commonly granted for infringement of
+trademarks and copyrights.54 For instance, in Vestergaarden, an Anton Piller order was
+granted against a defendant who was suspected of gaining access to manufacturing trade
+secrets.55 Notably, there is no requirement for a contractual relationship of confidentiality
+for such orders to be granted.
+3. DRAFTING NDAS
+22. At the heart of negotiating and drafting NDAs is a balance between adequately protective
+disclosure norms and unduly burdensome disclosure obligations.56 As we have seen above,
+NDAs must be drafted to reflect the delicate balance between the Discloser and Recipient’s
+interests. This section will endeavour to lay out the practical commercial considerations
+that play a role in drafting select key elements of confidentiality agreements.
+51 Anton Piller KG v Manufacturing Processes Limited [1976] 1 All ER 779.
+52 Bucyrus Europe Ltd v Vulcan Industries Engineering Co (2005) 30 PTC 279 (Cal) [19]–[20]. There must be a
+prima facie case, high actual or potential damage and evidence that there is a real possibility that the documents
+would be destroyed.
+53 Anton Piller KG v Manufacturing Processes Limited [1976] 1 All ER 779.
+54 Prashant Reddy, ‘A Critical Analysis of the Delhi High Court’s Approach to Ex-parte Orders in Copyright and
+Trademark Cases’ (2011) 3 Manupatra Intellectual Property Reports 171.
+55 Vestergaard Frandsen v M Sivasamy & Ors CS (OS) No. 599 of 2007 (Delhi HC) (Order 2 April 2007).
+56 Copenhagen Business School; Bhumesh Verma, Practical Guide to Drafting Commercial Contracts (OakBridge
+Publishing Pvt Ltd 2023) 99.
+12
+========== PAGE 15 ==========
+3.1. How to Define ‘Confidential Information’?
+23. The definition of confidential information lays out the scope of the agreement. Merely
+because certain information falls within the agreed definition of confidential’ information,
+does not mean that it will be protected in Court.57 If it is found to be available in the public
+domain, Courts will refuse to grant it protection despite contractual stipulations.
+24. Confidential information can be defined conceptually, or certain forms of information (for
+instance, intellectual property or pricing data) can be specified as confidential. Any
+definition must balance the Discloser’s intent to protect as much information as possible
+with the Recipient’s administrative burden in undertaking to protect a more expansive set
+of information. While the Discloser would define confidential information as broadly as
+possible, the Recipient would push back on a broad definition and instead insist that
+specific categories be delineated. Generally, a combination of both these approaches
+(tailored to the context of the NDA) can balance both parties’ interests:
+“Confidential Information” means all non-public, proprietary or sensitive information, in
+any form (oral, written, electronic or otherwise), disclosed or made available by the
+Discloser to the Recipient in connection with the evaluation, negotiation or consummation
+of a potential transaction between the Parties.
+Confidential Information includes, without limitation:
+● financial statements, projections, budgets and other financial data;
+● pricing policies, sales data, marketing strategies and distribution channels;
+● details of contracts, leases, licences and other commercial arrangements and;
+● information concerning employees, consultants, directors and compensation
+structures.
+25. An additional approach to defining confidential information is to distinguish between
+information depending on its sensitivity. As opposed to commercial know-how or business
+models, certain categories, such as personally identifiable information of employees or
+57 American Express Bank, Ltd. v Priya Puri (2006) 3 LLN 217 (Delhi High Court, 2006) [46] – [47].
+13
+========== PAGE 16 ==========
+customers, are intrinsically more sensitive, and may therefore attract higher contractual
+protections. From the Discloser’s perspective, classifying such information could allow it
+to designate higher protections (for instance, restricting disclosure only to a small group of
+pre-approved personnel or requiring additional protective measures such as encryption and
+secured storage). Some NDAs refer to this as “Strictly Confidential” or “Trade Secrets”,
+where applicable:
+In addition to the foregoing information [Confidential Information as defined in Para 24],
+Confidential Information shall include two categories:
+(i) Personally Identifiable Information relating to employees, officers, directors,
+customers or other individuals;
+(ii) Sensitive personal data or information as defined under applicable law;
+The requirements of data protection laws should also be taken into account.
+26. The definition of confidential information should exclude information that is already public
+when the Discloser discloses it to the Recipient or becomes public (other than as a result
+of breach of the agreement by the Recipient) after the Discloser discloses it to the
+Recipient.58 Ordinarily, four such exceptions are market-standard:
+Confidential Information shall not include information which the Recipient can
+demonstrate:
+(i) is publicly available or becomes publicly available through no action or fault of
+the Recipient,
+(ii) was already in the Recipient's possession or known to the Recipient prior to being
+disclosed or provided to the Recipient by or on behalf of the Discloser, provided,
+that, the source of such information or material was not bound by a contractual,
+legal or fiduciary obligation of confidentiality to the Recipient or any other party
+with respect thereto,
+(iii) was or is obtained by the Recipient from a third party, provided, that, such third
+party was not bound by a contractual, legal or fiduciary obligation of
+58 Ken Adams, ‘Exploring Two Exceptions to the Definition of Confidential Information’ (Adams on Contract
+Drafting, 27 October 2018) <https://www.adamsdrafting.com/exploring-two-exceptions-to-the-definition-of-
+confidential-information/> accessed 27 August 2025.
+14
+========== PAGE 17 ==========
+confidentiality to the Discloser or any other party with respect to such information
+or material, or
+(iv) is independently developed by the Recipient without reference to the Confidential
+Information.59
+As we saw above, irrespective of drafting, information present in the public domain will not
+be able to claim confidentiality protections.
+27. The definition of confidential information should also address the mode of disclosure and
+will typically cover information expressly marked as confidential as well as having a catch-
+all category that would cover information communicated in any mode.
+Confidential Information further includes (i) information expressly identified in
+writing as confidential at the time of disclosure; and (ii) any information,
+communicated or observed through any mode (including oral, graphic, electronic or
+written) which by their nature or context, a reasonable person would understand to be
+confidential.
+28. As oral disclosures present a practical difficulty an NDA may provide for oral disclosures
+to be confirmed as confidential in writing within a defined period. Without a written record
+of oral disclosures, confidentiality obligations for such information would become unduly
+onerous and uncertain.
+Any Confidential Information disclosed orally shall be identified as confidential at the
+time of disclosure and treated as such, provided that the Discloser confirms its
+confidential writing in written communication to the Recipient within [X] business
+days from the time of disclosure.
+59 Exar Corporation, ‘Confidentiality and Non-Disclosure Agreement’ (Exhibit 99(E), SEC EDGAR, 10 September
+2008) <https://www.sec.gov/Archives/edgar/data/1065246/000119312509046323/dex99e8.htm> accessed 26
+August 2025.
+15
+========== PAGE 18 ==========
+3.2. Duration of the Confidentiality Obligations
+29. The NDA should clarify how long the duty of confidentiality lasts for any information
+disclosed.60 The appropriate length of time will depend on the nature of the confidential
+information, but usually ranges between six months and three years.
+Without prejudice to any rights or liabilities accrued prior to such termination, the
+obligations in this agreement shall terminate and shall have no further force or effect
+on the date which is [three] years after the date of this agreement.
+In relation to NDAs entered into in contemplation of an M&A transaction it is common
+to see provisions such as:
+Without prejudice to any rights or liabilities accrued prior to such termination, the
+obligations in this agreement shall terminate and shall have no further force or effect:
+• upon completion of the Transaction; or
+• if completion of the Transaction has not occurred by the date which is
+[specified number] months after the date of this agreement, on that date.
+30. As we have seen, it is theoretically permissible for information to be confidential in
+perpetuity. Practically, however, the key issue is how long the disclosed information retains
+its confidential character. Furthermore, parties are unlikely to agree to obligations in
+perpetuity, since the Recipient would need to take on liability and administrative burdens
+for an indefinite period.61 As such, only specifically identified categories of information
+(such as trade secrets)62 are likely to be protected in perpetuity.
+60 For the distinction between termination of confidential agreement and survival of confidentiality obligations, See
+Campbell v Frisbee [2002] EWCA Civ 1374 [20] – [21].
+61 Ken Adams, ‘How to State the Duration of the Obligation to Keep Information Confidential’ (Adams on Contract
+Drafting, 2 January 2012) <https://www.adamsdrafting.com/how-to-state-the-duration-of-the-obligation-to-keep-
+information-confidential/> accessed 30 August 2025.
+62 ‘Commercial Agreement - Mutual Non-Disclosure and Confidentiality Agreement (Annotated)’
+<https://www.bloomberglaw.com/external/document/X1FG0UQ8000000/commercial-agreement-mutual-non-
+disclosure-and-confidentiality-a> accessed 25 August 2025.
+16
+========== PAGE 19 ==========
+Duration of confidentiality: The Recipient shall continue to keep the Confidential
+Information secret:
+In the case of Confidential Information that constitutes [Trade Secret/Strictly
+Confidential Information], for as long as it remains a [Trade Secret/Strictly
+Confidential Information]; in the case of any other Confidential Information, for
+[specified duration].
+3.3. To Whom Confidential Information is Disclosed
+31. Where the Recipient is a corporate entity, disclosure will be to the Recipient's employees
+and directors, and Recipients will typically want to be able to share the disclosed
+information with their advisers. The NDA needs to provide a framework for such further
+permitted disclosure and will generally include a definition of the Representatives of the
+Recipient as:
+the “directors, officers, employees, agents, consultants, advisors, shareholders or
+other representatives, including legal counsel, accountants and financial advisors.”63
+The Recipient will be required to ensure that its Representatives observe the same
+restrictions on the use of confidential information. In some cases, the NDA will provide
+for the Recipient's Representatives to enter into NDAs directly with the Discloser or
+alternatively the Recipient will retain liability for a breach by its Representatives.
+Depending on the sensitivity of the information, parties may restrict the disclosure of Trade
+Secrets or Strictly Confidential Information only to top-most executives or legal counsel.
+(i) The Recipient shall disseminate Confidential Information only to those employees,
+officers, directors, affiliates, professional advisors, investors, agents, licensees or other
+persons acting on its behalf (“Representatives”).
+(ii) The Recipient shall maintain Confidential Information in a secure place with access
+limited to those of the Recipient’s Representatives who (a) require such material for
+63 Byron Egan ‘Confidentiality Agreements: How to Draft them and What they Restrict’, Annual Advanced
+Business Course (2013, Jackson Walker LLP) Appendix A, 3.
+17
+========== PAGE 20 ==========
+the purpose of evaluating the Transaction and (b) are informed by the Recipient of the
+confidential nature of the Confidential Material and the obligations of this agreement.
+(iii) The Recipient shall be responsible for any breach of the provisions of this agreement
+by its Representatives.
+or
+The Recipient shall procure that each of its Representatives enters into confidentiality
+agreements with the Discloser on terms no less strict than those contained in this
+agreement.64
+3.4. No Representation or Warranty
+32. The Discloser will want to ensure that it is not liable to claims from the Recipient based on
+the information disclosed pursuant to the NDA. The NDA will therefore commonly contain
+a clause acknowledging that the Discloser makes no representation or warranty as to the
+accuracy or completeness of the confidential information and that the Discloser shall have
+no liability to the Recipient resulting from the use of the confidential information.
+3.5. Retention, Return and Destruction Policies
+33. It is customary for parties to agree provisions dealing with the return and destruction of the
+confidential information shared, and to provide certificates to that effect.65 The Recipient
+may be required to, upon the Discloser’s written request, return all confidential materials
+(including copies, notes, and summaries) or permanently destroy them, along with any
+derivative materials created by the Recipient or its representatives. If destruction is directed
+or agreed, the Recipient may be required to provide written certification by an authorized
+officer within the specified timeframe, including a general description of the materials
+destroyed if requested.
+64 ibid 6.
+65 Rebecca Myers, ‘Confidentiality, Nondisclosure and Secrecy Agreements’ (Lexis Nexis, 2015)
+<https://www.lexisnexis.com/community/insights/legal/practical-guidance-journal/b/pa/posts/confidentiality-
+nondisclosure-and-secrecy-agreements> accessed 24 August 2025.
+18
+========== PAGE 21 ==========
+A Recipient should ensure that it is able to comply with the return and destruction
+provisions before agreeing to them. In particular, it should exclude any information which
+is retained electronically pursuant to automatic archiving and any information that it needs
+to retain pursuant to law, regulation or the rules of any regulatory body. In practice, this
+can cause some difficulty, for instance in situations where the Recipient is legally required
+to retain certain records which contain confidential information, such as board minutes.
+Complications can also arise in respect of confidential information stored on automatic
+electronic backup systems, which can be difficult to purge without causing potential issues
+for business continuity. For this reason, it is often prudent to include carve-outs to these
+clauses, such that these situations are less likely to arise.
+3.6. Drafting for Remedies
+34. Injunctions: As we have seen, an explicit provision might assist the Discloser in seeking
+an equitable remedy from the Court. Clauses that would perform this function are as
+follows:
+The Recipient acknowledges that damages alone may not be an adequate remedy for
+any breach of its obligations under this agreement and, accordingly, without prejudice
+to any other rights or remedies that the Discloser might seek, the Discloser shall be
+entitled to the remedies of injunction, specific performance and other equitable relief
+for any threatened or actual breach of the provisions of this agreement.
+…the Discloser shall be entitled to seek, in addition to any other legal or equitable
+remedies it may have in connection therewith (including any right to damages that it
+may suffer), temporary, preliminary and permanent injunctive relief restraining such
+breach or threatened breach. The Recipient expressly acknowledges that the harm
+which might result to the Discloser’s business as a result of any such breach would be
+irreparable.
+19
+========== PAGE 22 ==========
+35. Indemnities: The Discloser may seek an indemnity, since it provides for the easiest route
+of recovery if a breach occurs.66 However, indemnities are generally not considered market
+standard in NDAs. 67 Despite this, and depending on the needs and bargaining power of the
+parties, they may be included when tailored to specific harms (such as breach of Strictly
+Confidential Information, or reputational harm) and accompanied by appropriate
+limitations. For instance, the parties may be particularly concerned about a specific piece
+of information falling into the wrong hands.68
+3.7. Takeover Regulations and Confidentiality
+36. In M&A, takeover laws around the world significantly influence the scope and drafting of
+confidentiality agreements. In Indian law, parties are mandated to sign a non-disclosure
+agreement in respect of Unpublished Price Sensitive Information for any transaction which
+triggers a mandatory bid offer under the SEBI Takeover Regulations, 2011.69 The objective
+of this is to prevent insider trading before the acquisition of a target.
+37. Similarly, once a takeover triggers an open offer, the target board must ensure that all
+material information is equally disseminated. This means that any NDA preventing the
+target from disclosing deal details in the offer documents would fall foul of this regulation
+and be unenforceable.70
+38. In the UK, under the Takeover Code, there is a blanket prohibition on deal protection
+measures and inducement fees which extends to any 'offer related arrangements'.71 The
+objective of the prohibition is to strengthen the position of the target company. The
+definition of an 'offer-related arrangement' is very wide and includes any agreement,
+arrangement or commitment proposed to be entered into between the target (and persons
+66 Peter Watts, Philipp Grzimek, Marco Berliri, Alex Dolmans, Winston Maxwell, Lorig Kalaydjian and Ellie
+Pszonka, ‘Non-disclosure agreements: Key issues in international deals’ (2013) PLC Magazine 25, 33.
+67 Investment Property Forum, ‘Non-Disclosure Agreement & Exclusivity Agreement’ (IPF, 2019)
+<https://www.ipf.org.uk/resourceLibrary/non-disclosure-agreement---exclusivity-agreement.html> accessed 28
+August 2025.
+68 Peter Watts, Philipp Grzimek, Marco Berliri, Alex Dolmans, Winston Maxwell, Lorig Kalaydjian and Ellie
+Pszonka, ‘Non-disclosure agreements: Key issues in international deals’ (2013) PLC Magazine 25, 33.
+69 Prohibition of Insider Trading)Regulations 2015, reg 3(4).
+70 ‘Disclosures under Non-Disclosure Agreements?’ (IndiaCorpLaw, 27 November 2015)
+<https://indiacorplaw.in/2015/11/27/disclosures-under-non-disclosure/> accessed 3 November 2025.
+71 The City Code on Takeovers and Mergers, r 21.2 (‘Offer-related arrangements’) (UK Takeover Panel, 2024).
+20
+========== PAGE 23 ==========
+acting in concert with it) and a bidder (and persons acting in concert with it) in connection
+with an offer, during an offer period or when an offer period is reasonably in contemplation,
+subject to certain limited exceptions.
+39. There is a specific exception for a commitment by the target to maintain confidentiality,
+provided that such an arrangement does not contain provisions which would otherwise
+constitute "offer-related arrangements" including, for example, exclusivity clauses and
+break fees. So, when preparing a mutual confidentiality undertaking, it is important to
+ensure that it does not breach the relevant Takeover Code provision.
+40. In India however, the SEBI Takeover Code does not define offer related arrangements in
+the manner that the UK Code does. Rather, the Insider Trading Regulations and disclosure
+rules indirectly limit the confidentiality obligations that the parties can agree to. The
+practical effect of the two regimes is the same — that NDAs must be restricted strictly to
+sensitive information without contravening the rules that could prejudice the target, or
+market transparency at large.
+3.8. The role of Artificial Intelligence and technological tools in the NDA process
+41. Document automation has been used for several years to draft NDAs but more recently we
+are seeing technological tools and Artificial Intelligence (AI) play an increasing role in the
+process of reviewing and negotiating NDAs. Various tools are available to carry out a
+clause-by-clause review against playbooks and, by using a combination of large language
+models and contract analytics, are able to classify clause variants, flag deviations from risk
+tolerances, and perform dynamic risk scoring informed by counterparty, jurisdictional, and
+transaction context. In practice, the best results are reliant on the AI having sufficient data
+to effectively progress negotiations. Where there is only a playbook, while this can be
+useful in preparing a first markup of a document, there is a risk that reliance on AI can lead
+to protracted negotiations, as the AI often repeatedly pushes for only the playbook positions
+that it has been programmed to accept. And, as with all AI, there is also still an important
+role for lawyers to review the AI output, from a commercial and common-sense perspective
+as well as a legal one.
+21
+========== PAGE 24 ==========
+4. INTERNATIONAL PRACTICE POINTS
+42. The structure of an NDA is widely standardised across jurisdictions, so English and
+international forms are similar to Indian law documents. The foundation is a carefully
+drafted definition of Confidential Information with standard exclusions such as information
+in the public domain or information already known by the Recipient. Whistleblowing,
+illegality, and public interest carve-outs are also standard features of English NDAs.
+English law will not enforce agreements that prevent disclosures to regulators, law
+enforcement, or legal advisers.
+43. In addition to core protections, a standalone English-law NDA agreed at the outset of an
+M&A transaction may also include provisions dealing with standstill, non-solicitation and
+exclusivity. In some circumstances, these cannot be included and in other circumstances it
+would not be appropriate to include these provisions, for example, when a short-form NDA
+is required.
+44. Parties need to be conscious of the general prohibition on sharing competitively sensitive
+information with actual or potential competitors. In order to regulate the sharing of such
+information in the M&A context the parties may enter into a clean team arrangement, as
+well as an NDA. Under the clean team arrangement only members of a specified clean
+team will have access to the relevant information and will be subject to obligations over
+and above those set out in the original NDA. Ideally the clean team will consist of external
+advisors, who report back to the prospective buyer at a more aggregated level or on a
+summarised basis. If it is essential for certain people within the prospective buyer to have
+access to relevant information, then it may be possible to widen the clean team to include
+specified internal individuals, who are not involved in certain aspects of the day-to-day
+operations of the competing business (such as sales, R&D and recruitment).
+45. It is common to see a mutual confidentiality undertaking where both parties are receiving
+confidential information even if one party is the principal recipient. For example, although
+the bidder on a takeover will be the principal recipient, the target company may receive
+limited confidential information about the bidder as part of the process of negotiating a
+recommended offer particularly if the offer is a share offer, and the fact of the transaction
+22
+========== PAGE 25 ==========
+should still be mutually confidential. A mutual NDA is also often easier to negotiate and
+prevents delays arising if a second one-way NDA has to be put in place at a later stage in
+the transaction.
+46. Data protection provisions are now common in English law NDAs where the Confidential
+Information being shared includes any personal data, and there is no separate data sharing
+agreement between the parties. Such provisions require the Recipient to comply with its
+obligations under the relevant data protection laws.
+47. Export controls and sanctions compliance are equally critical where the information has
+potential defence, dual‑use, or sensitive technology applications, especially when US
+parties or content are involved. NDAs cannot authorise transfers that would be unlawful
+under export control or sanctions regimes, and the drafting should reflect that illegality
+overrides any contractual confidentiality obligation.
+48. In relation to remedies, English law NDAs often contain no express provisions other than
+an express acknowledgement that damages alone would not be an adequate remedy for
+breach of the confidentiality undertakings. Indemnities are occasionally included in
+relation to the Recipient's breach of its obligations, although in commercial agreements the
+more common position is that the Discloser's proper recourse should be a claim for breach
+of contract.
+49. English law NDAs occasionally provide for arbitration under well-known rules, such as
+LCIA, ICC and SIAC, in order to facilitate cross-border enforceability.
+CONCLUSION
+50. This note has attempted to lay down the doctrinal position on confidentiality agreements
+in Indian and English law, tracing its position in contract and in equity. We find that while
+India lacks a unified statutory framework, there is a broad scope for protecting confidential
+information and adequate tools for legal recourse. English law, on the other hand, follows
+a broadly similar track, with some important differences.
+23
+========== PAGE 26 ==========
+51. From a commercial perspective, safeguarding confidential information is essential to
+preserving competitive advantage and protecting intellectual property. When drafting
+NDAs, the parties should carefully consider the definition of confidential information and
+disclosure, setting appropriate durations, identifying permitted recipients and practical
+enforcement mechanisms.
+24
