@@ -350,3 +350,5 @@ This is a competition-ready LegalTech product built with:
 **Built with ❤️ for Indian freelancers**
 
 **Competition Edition - January 2026**
+#   v i v e k  
+ 
