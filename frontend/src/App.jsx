@@ -11,7 +11,7 @@ import ComparisonStats from './components/ComparisonStats'
 import SevenAnswers from './components/SevenAnswers'
 import SalaryBreakdownCard from './components/SalaryBreakdownCard'
 
-const API_URL = 'http://localhost:8000'
+const API_URL = 'http://192.168.158.228:8000'
 
 function App() {
     // Mode state: 'general' or 'hr'

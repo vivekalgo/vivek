@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AI Legal Sentinel</string>
+    <string name="title_activity_main">AI Legal Sentinel</string>
+    <string name="package_name">com.ailegal.sentinel</string>
+    <string name="custom_url_scheme">com.ailegal.sentinel</string>
+</resources>
