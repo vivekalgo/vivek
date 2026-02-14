@@ -20,6 +20,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.2'
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -37,14 +42,9 @@ jobs:
         working-directory: ./frontend
         run: npx cap sync
 
-      - name: Fix Permissions & Build APK
+      - name: Build APK (System Gradle)
         working-directory: ./frontend/android
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y dos2unix
-          dos2unix gradlew
-          chmod +x gradlew
-          ./gradlew assembleDebug
+        run: gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
