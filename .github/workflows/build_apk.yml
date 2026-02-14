@@ -37,12 +37,14 @@ jobs:
         working-directory: ./frontend
         run: npx cap sync
 
-      - name: Build APK (Gradle Action)
-        uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: wrapper
-          project-root: frontend/android
-          arguments: assembleDebug
+      - name: Fix Permissions & Build APK
+        working-directory: ./frontend/android
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dos2unix
+          dos2unix gradlew
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
