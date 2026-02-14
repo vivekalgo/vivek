@@ -882,9 +882,13 @@ if __name__ == "__main__":
     import uvicorn
     
     # Safe startup with port check
-    PORT = 8000
+    PORT = int(os.environ.get("PORT", 8000))
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    result = sock.connect_ex(('127.0.0.1', PORT))
+    # Check if port is in use (only if running locally)
+    if os.environ.get("RENDER") is None:
+        result = sock.connect_ex(('127.0.0.1', PORT))
+    else:
+        result = 1 # Force proceed on Render
     sock.close()
     
     if result == 0:
