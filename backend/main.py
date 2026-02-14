@@ -56,6 +56,7 @@ try:
     
     # Load all API keys from environment
     api_keys = [
+        os.getenv("GEMINI_API_KEY", ""),  # Added support for single key name
         os.getenv("GEMINI_API_KEY_1", ""),
         os.getenv("GEMINI_API_KEY_2", ""),
         os.getenv("GEMINI_API_KEY_3", ""),
