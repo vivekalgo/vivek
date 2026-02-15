@@ -26,11 +26,14 @@ export function AuthProvider({ children }) {
         return () => subscription.unsubscribe()
     }, [])
 
-    const signInWithEmail = async (email) => {
+    const signInWithEmail = async (email, fullName) => {
         const { error } = await supabase.auth.signInWithOtp({
             email,
             options: {
-                emailRedirectTo: `${window.location.origin}`
+                emailRedirectTo: `${window.location.origin}`,
+                data: {
+                    full_name: fullName
+                }
             }
         })
         if (error) throw error

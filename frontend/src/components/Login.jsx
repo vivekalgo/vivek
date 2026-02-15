@@ -7,6 +7,7 @@ export default function Login() {
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState('')
+    const [fullName, setFullName] = useState('')
     const [message, setMessage] = useState(null)
     const [error, setError] = useState(null)
 
@@ -22,8 +23,8 @@ export default function Login() {
         setError(null)
         setMessage(null)
         try {
-            await signInWithEmail(email)
-            setMessage('Check your email for the magic link!')
+            await signInWithEmail(email, fullName)
+            setMessage('Check your email for the verification link!')
         } catch (err) {
             setError(err.message)
         } finally {
@@ -63,6 +64,14 @@ export default function Login() {
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div>
                         <input
+                            type="text"
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
+                            placeholder="Full Name"
+                            required
+                            className="glass-input w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all mb-4"
+                        />
+                        <input
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -83,7 +92,7 @@ export default function Login() {
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                             </svg>
                         ) : (
-                            <span>Send Magic Link</span>
+                            <span>Send Verification Link</span>
                         )}
                     </button>
                 </form>

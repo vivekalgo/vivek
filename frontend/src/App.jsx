@@ -212,10 +212,20 @@ function Home() {
                             </div>
 
                             {/* User Profile / Logout */}
-                            <div className="flex items-center gap-2 border-l border-white/10 pl-4 ml-2">
-                                <span className="text-sm font-medium text-slate-300 hidden sm:block">
-                                    {user.email.split('@')[0]}
-                                </span>
+                            <div className="flex items-center gap-3 border-l border-white/10 pl-4 ml-2">
+                                <div className="flex flex-col items-end hidden sm:flex">
+                                    <span className="text-sm font-bold text-white">
+                                        {user.user_metadata?.full_name || user.email.split('@')[0]}
+                                    </span>
+                                    <span className="text-xs text-slate-400">
+                                        {user.email}
+                                    </span>
+                                </div>
+                                {/* Profile Icon */}
+                                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary-500 to-primary-400 flex items-center justify-center shadow-lg shadow-primary-500/30 text-white font-bold text-sm">
+                                    {(user.user_metadata?.full_name?.[0] || user.email[0]).toUpperCase()}
+                                </div>
+
                                 <button
                                     onClick={signOut}
                                     className="p-2 hover:bg-white/10 rounded-lg text-slate-400 hover:text-white transition-colors"
