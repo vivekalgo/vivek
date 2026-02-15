@@ -9,10 +9,19 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        if (!supabase) {
+            console.warn('Supabase client not initialized. Authentication disabled.')
+            setLoading(false)
+            return
+        }
+
         // Check active session
         supabase.auth.getSession().then(({ data: { session } }) => {
             setSession(session)
             setUser(session?.user ?? null)
+            setLoading(false)
+        }).catch((err) => {
+            console.error('Error getting session:', err)
             setLoading(false)
         })
 
@@ -27,6 +36,8 @@ export function AuthProvider({ children }) {
     }, [])
 
     const signInWithEmail = async (email, fullName) => {
+        if (!supabase) throw new Error("Supabase is not configured.")
+
         const { error } = await supabase.auth.signInWithOtp({
             email,
             options: {
