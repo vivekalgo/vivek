@@ -1,6 +1,74 @@
-import { createContext, useContext, useEffect, useState } from 'react'
-import { App } from '@capacitor/app'
-import { supabase } from '../supabaseClient'
+import { Capacitor } from '@capacitor/core'
+
+// ...
+
+useEffect(() => {
+    // ... (check imports)
+
+    // Handle Deep Links (for Android)
+    App.addListener('appUrlOpen', (event) => {
+        console.log('App opened with URL:', event.url)
+
+        // Handle both hash (#) and query (?) styles
+        const url = event.url
+        let params = new URLSearchParams()
+
+        if (url.includes('#')) {
+            params = new URLSearchParams(url.split('#')[1])
+        } else if (url.includes('?')) {
+            params = new URLSearchParams(url.split('?')[1])
+        }
+
+        const accessToken = params.get('access_token')
+        const refreshToken = params.get('refresh_token')
+
+        // Also check for error parameters
+        const error = params.get('error')
+        const errorDescription = params.get('error_description')
+
+        if (error) {
+            console.error('Auth error from link:', errorDescription)
+            return
+        }
+
+        if (accessToken && refreshToken) {
+            supabase.auth.setSession({
+                access_token: accessToken,
+                refresh_token: refreshToken
+            }).then(({ error }) => {
+                if (!error) {
+                    console.log('Session restored from Deep Link')
+                    // Reload user to ensure state is fresh
+                    supabase.auth.getUser().then(({ data }) => {
+                        if (data?.user) setUser(data.user)
+                    })
+                }
+            })
+        }
+    })
+
+    // ...
+}, [])
+
+const signInWithEmail = async (email, fullName) => {
+    if (!supabase) throw new Error("Supabase is not configured.")
+
+    const isNative = Capacitor.isNativePlatform()
+    const redirectUrl = isNative ? 'ailegal://login' : window.location.origin
+
+    console.log(`Attempting login. Native: ${isNative}, Redirect: ${redirectUrl}`)
+
+    const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+            emailRedirectTo: redirectUrl,
+            data: {
+                full_name: fullName
+            }
+        }
+    })
+    if (error) throw error
+}
 
 const AuthContext = createContext()
 
@@ -19,25 +87,31 @@ export function AuthProvider({ children }) {
         // Handle Deep Links (for Android)
         App.addListener('appUrlOpen', (event) => {
             console.log('App opened with URL:', event.url)
-            // Extract tokens from the hash fragment
-            // URL format: ailegal://login#access_token=...&refresh_token=...
-            const hashIndex = event.url.indexOf('#')
-            if (hashIndex > -1) {
-                const params = new URLSearchParams(event.url.substring(hashIndex + 1))
-                const accessToken = params.get('access_token')
-                const refreshToken = params.get('refresh_token')
 
-                if (accessToken && refreshToken) {
-                    supabase.auth.setSession({
-                        access_token: accessToken,
-                        refresh_token: refreshToken
-                    }).then(({ error }) => {
-                        if (!error) {
-                            // Session set successfully, user logic will update automatically via onAuthStateChange
-                            console.log('Session restored from Deep Link')
-                        }
-                    })
-                }
+            // Handle both hash (#) and query (?) styles
+            const url = event.url
+            let params = new URLSearchParams()
+
+            if (url.includes('#')) {
+                params = new URLSearchParams(url.split('#')[1])
+            } else if (url.includes('?')) {
+                params = new URLSearchParams(url.split('?')[1])
+            }
+
+            const accessToken = params.get('access_token')
+            const refreshToken = params.get('refresh_token')
+
+            if (accessToken && refreshToken) {
+                supabase.auth.setSession({
+                    access_token: accessToken,
+                    refresh_token: refreshToken
+                }).then(({ error }) => {
+                    if (!error) {
+                        supabase.auth.getUser().then(({ data }) => {
+                            if (data?.user) setUser(data.user)
+                        })
+                    }
+                })
             }
         })
 
