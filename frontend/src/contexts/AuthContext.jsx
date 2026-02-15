@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import { App } from '@capacitor/app'
 import { supabase } from '../supabaseClient'
 
 const AuthContext = createContext()
@@ -14,6 +15,31 @@ export function AuthProvider({ children }) {
             setLoading(false)
             return
         }
+
+        // Handle Deep Links (for Android)
+        App.addListener('appUrlOpen', (event) => {
+            console.log('App opened with URL:', event.url)
+            // Extract tokens from the hash fragment
+            // URL format: ailegal://login#access_token=...&refresh_token=...
+            const hashIndex = event.url.indexOf('#')
+            if (hashIndex > -1) {
+                const params = new URLSearchParams(event.url.substring(hashIndex + 1))
+                const accessToken = params.get('access_token')
+                const refreshToken = params.get('refresh_token')
+
+                if (accessToken && refreshToken) {
+                    supabase.auth.setSession({
+                        access_token: accessToken,
+                        refresh_token: refreshToken
+                    }).then(({ error }) => {
+                        if (!error) {
+                            // Session set successfully, user logic will update automatically via onAuthStateChange
+                            console.log('Session restored from Deep Link')
+                        }
+                    })
+                }
+            }
+        })
 
         // Check active session
         supabase.auth.getSession().then(({ data: { session } }) => {
@@ -41,7 +67,8 @@ export function AuthProvider({ children }) {
         const { error } = await supabase.auth.signInWithOtp({
             email,
             options: {
-                emailRedirectTo: `${window.location.origin}`,
+                // Use Deep Link for Mobile, Window Origin for Web
+                emailRedirectTo: 'ailegal://login',
                 data: {
                     full_name: fullName
                 }
