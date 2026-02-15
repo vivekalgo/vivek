@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { motion } from 'framer-motion' // Optional wrapper, but sticking to CSS for now
+// Optional wrapper, but sticking to CSS for now
 
 // Reusable Card Component with ref support
 const Card = forwardRef(({ children, className = '', hover = false, id }, ref) => {
