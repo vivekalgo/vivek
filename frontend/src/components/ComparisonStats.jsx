@@ -9,12 +9,12 @@ function ComparisonStats({ data }) {
             case 'CORRECT':
             case 'ACCEPTABLE':
             case 'NONE':
-                return 'bg-green-50 border-green-200 text-green-800'
+                return 'success'
             case 'HIGH':
             case 'LOW':
-                return 'bg-red-50 border-red-200 text-red-800'
+                return 'high'
             default:
-                return 'bg-gray-50 border-gray-200 text-gray-800'
+                return 'default'
         }
     }
 
@@ -37,19 +37,19 @@ function ComparisonStats({ data }) {
             {/* PF Rate Card */}
             <Card>
                 <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-sm font-semibold text-slate-700">PF Deduction Rate</h3>
-                    <Badge variant={data.pf_status === 'CORRECT' ? 'success' : 'high'}>
+                    <h3 className="text-sm font-semibold text-slate-300">PF Deduction Rate</h3>
+                    <Badge variant={getStatusColor(data.pf_status)}>
                         {getStatusIcon(data.pf_status)} {data.pf_status}
                     </Badge>
                 </div>
                 <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-slate-900">{data.pf_rate}%</span>
-                    <span className="text-sm text-slate-500">vs 12% standard</span>
+                    <span className="text-3xl font-bold text-white">{data.pf_rate}%</span>
+                    <span className="text-sm text-slate-400">vs 12% standard</span>
                 </div>
-                <div className="mt-3 bg-slate-50 rounded-lg p-2">
+                <div className="mt-4 bg-white/5 rounded-lg p-2 border border-white/10">
                     <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-600">Standard Rate</span>
-                        <span className="font-semibold text-slate-700">12%</span>
+                        <span className="text-slate-400">Standard Rate</span>
+                        <span className="font-semibold text-slate-200">12%</span>
                     </div>
                 </div>
             </Card>
@@ -57,20 +57,20 @@ function ComparisonStats({ data }) {
             {/* Admin Charges Card */}
             <Card>
                 <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-sm font-semibold text-slate-700">Admin Charges</h3>
+                    <h3 className="text-sm font-semibold text-slate-300">Admin Charges</h3>
                     <Badge variant={data.admin_charges_status === 'NONE' || data.admin_charges_status === 'ACCEPTABLE' ? 'success' : 'high'}>
                         {getStatusIcon(data.admin_charges_status)} {data.admin_charges_status}
                     </Badge>
                 </div>
                 <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-slate-900">₹{data.admin_charges || 0}</span>
-                    <span className="text-sm text-slate-500">per month</span>
+                    <span className="text-3xl font-bold text-white">₹{data.admin_charges || 0}</span>
+                    <span className="text-sm text-slate-400">per month</span>
                 </div>
                 {data.admin_charges > 0 && (
-                    <div className="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-2">
-                        <p className="text-xs text-amber-800">
-                            {data.admin_charges > 500 
-                                ? '⚠ Higher than typical (₹200-300/month)' 
+                    <div className="mt-4 bg-amber-500/10 border border-amber-500/20 rounded-lg p-3">
+                        <p className="text-xs text-amber-200/80">
+                            {data.admin_charges > 500
+                                ? '⚠ Higher than typical (₹200-300/month)'
                                 : '✓ Within acceptable range'}
                         </p>
                     </div>

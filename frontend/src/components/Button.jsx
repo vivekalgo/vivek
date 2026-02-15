@@ -4,21 +4,24 @@ export default function Button({
     onClick,
     variant = 'primary',
     disabled = false,
-    className = ''
+    className = '',
+    type = 'button'
 }) {
-    const baseStyles = 'px-6 py-3 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed'
+    const baseStyles = 'px-6 py-3 rounded-xl font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95'
 
     const variants = {
-        primary: 'bg-primary-600 text-white hover:bg-primary-700 shadow-md hover:shadow-lg',
-        secondary: 'bg-white text-slate-700 border-2 border-slate-200 hover:border-primary-500 hover:text-primary-600',
-        ghost: 'text-slate-600 hover:bg-slate-100'
+        primary: 'bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 hover:-translate-y-0.5',
+        secondary: 'bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10 hover:border-white/20 backdrop-blur-sm',
+        ghost: 'text-slate-400 hover:text-white hover:bg-white/5',
+        danger: 'bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20'
     }
 
     return (
         <button
+            type={type}
             onClick={onClick}
             disabled={disabled}
-            className={`${baseStyles} ${variants[variant]} ${className}`}
+            className={`${baseStyles} ${variants[variant] || variants.primary} ${className}`}
         >
             {children}
         </button>

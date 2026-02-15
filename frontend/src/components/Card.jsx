@@ -1,4 +1,5 @@
 import { forwardRef } from 'react'
+import { motion } from 'framer-motion' // Optional wrapper, but sticking to CSS for now
 
 // Reusable Card Component with ref support
 const Card = forwardRef(({ children, className = '', hover = false, id }, ref) => {
@@ -7,8 +8,8 @@ const Card = forwardRef(({ children, className = '', hover = false, id }, ref) =
             ref={ref}
             id={id}
             className={`
-      bg-white rounded-xl shadow-soft border border-slate-100 p-6
-      ${hover ? 'hover:shadow-lg transition-shadow duration-200' : ''}
+      glass-card p-6 text-slate-100
+      ${hover ? 'hover:scale-[1.01] hover:shadow-glow' : ''}
       ${className}
     `}>
             {children}

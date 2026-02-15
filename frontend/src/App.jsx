@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import UploadCard from './components/UploadCard'
 import RiskCard from './components/RiskCard'
@@ -116,7 +116,7 @@ function App() {
             // Show all clauses from backend
             setClausePanelData({
                 clauses: results.all_clauses || [],
-                title: 'All Detected Clauses from Your PDF'
+                title: 'All Detected Clauses'
             })
         } else {
             // Show only risky clauses
@@ -138,86 +138,76 @@ function App() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
-            {/* Header */}
-            <header className="bg-gradient-to-r from-slate-900 to-slate-800 border-b border-slate-700 shadow-lg sticky top-0 z-30">
-                <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="min-h-screen text-slate-100 flex flex-col font-sans">
+            {/* Glass Header */}
+            <header className="sticky top-0 z-50 glass border-b border-white/10">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/30">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
                                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
                             </div>
                             <div>
-                                <h1 className="text-2xl font-bold text-white tracking-tight">
+                                <h1 className="text-xl font-bold font-display tracking-tight text-white">
                                     AI Legal Sentinel
                                 </h1>
-                                <p className="text-slate-400 text-xs font-medium">
-                                    🇮🇳 India Edition
+                                <p className="text-primary-200 text-xs font-medium">
+                                    Trusted Contract Analysis
                                 </p>
                             </div>
                         </div>
 
-                        {/* Mode Switcher */}
-                        <div className="bg-slate-800 p-1 rounded-xl flex border border-slate-700">
-                            <button
-                                onClick={() => { setMode('general'); setResults(null); setFile(null); }}
-                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${mode === 'general'
-                                    ? 'bg-blue-600 text-white shadow-md'
-                                    : 'text-slate-400 hover:text-white hover:bg-slate-700'
-                                    }`}
-                            >
-                                General Risk
-                            </button>
-                            <button
-                                onClick={() => { setMode('hr'); setResults(null); setFile(null); }}
-                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${mode === 'hr'
-                                    ? 'bg-indigo-600 text-white shadow-md'
-                                    : 'text-slate-400 hover:text-white hover:bg-slate-700'
-                                    }`}
-                            >
-                                Company Validation
-                            </button>
-                            <button
-                                onClick={() => { setMode('salary'); setResults(null); setFile(null); }}
-                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${mode === 'salary'
-                                    ? 'bg-emerald-600 text-white shadow-md'
-                                    : 'text-slate-400 hover:text-white hover:bg-slate-700'
-                                    }`}
-                            >
-                                💰 Salary Analysis
-                            </button>
+                        {/* Mode Switcher Tabs */}
+                        <div className="glass-card p-1 flex w-full md:w-auto overflow-x-auto no-scrollbar">
+                            {[
+                                { id: 'general', label: 'General Risk', emoji: '🛡️' },
+                                { id: 'hr', label: 'HR Check', emoji: '👔' },
+                                { id: 'salary', label: 'Salary', emoji: '💰' }
+                            ].map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => { setMode(tab.id); setResults(null); setFile(null); }}
+                                    className={`flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${mode === tab.id
+                                        ? 'bg-primary-600 text-white shadow-lg'
+                                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                                        }`}
+                                >
+                                    <span className="mr-2">{tab.emoji}</span>
+                                    {tab.label}
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </div>
             </header>
 
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-6 py-8">
+            <main className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full">
                 {/* Hero / Context Header */}
                 {!results && (
                     <div className="text-center mb-10 animate-fade-in-up">
-                        <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                        <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-4 leading-tight">
                             {mode === 'general'
-                                ? "Check Your Contract for Risks"
+                                ? "Uncover Hidden Risks in Contracts"
                                 : mode === 'hr'
-                                    ? "Validate Employment Contracts"
-                                    : "Analyze Your Salary Annexure"}
+                                    ? "Validate Employment Agreements"
+                                    : "Decode Your Salary Structure"}
                         </h2>
-                        <p className="text-slate-600 max-w-2xl mx-auto">
+                        <p className="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
                             {mode === 'general'
-                                ? "Upload any contract to find risky clauses, unfair terms, and hidden liabilities using Indian Contract Act analysis."
+                                ? "Instant analysis using Indian Contract Act standards. Detect unfair terms and liabilities in seconds."
                                 : mode === 'hr'
-                                    ? "Ensure your employment agreements comply with Indian Labour Laws. Check for mandatory clauses and forbidden terms."
-                                    : "Upload your salary annexure to understand CTC breakdown, PF deductions, and get answers to 7 key questions about your compensation."}
+                                    ? "Ensure compliance with Indian Labour Laws. We check for mandatory clauses and forbiddden terms."
+                                    : "Visualize your in-hand salary, PF deductions, and tax implications clearly."}
                         </p>
                     </div>
                 )}
 
                 {/* Upload Section (shown when no results) */}
                 {!results && (
-                    <div className="max-w-xl mx-auto">
+                    <div className="max-w-xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                         <UploadCard
                             onFileSelect={handleFileSelect}
                             selectedFile={file}
@@ -226,8 +216,8 @@ function App() {
                             mode={mode} // Pass mode for styling if needed
                         />
                         {error && (
-                            <div className="mt-4 bg-red-50 border-2 border-red-200 rounded-xl p-4 animate-shake">
-                                <p className="text-sm text-red-800 font-medium flex items-center gap-2">
+                            <div className="mt-4 bg-red-500/10 border border-red-500/20 rounded-xl p-4 animate-pulse-slow">
+                                <p className="text-sm text-red-300 font-medium flex items-center gap-2">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
@@ -240,24 +230,24 @@ function App() {
 
                 {/* RESULTS AREA */}
                 {results && (
-                    <>
+                    <div className="animate-fade-in-up">
                         {mode === 'salary' ? (
                             /* SALARY ANALYSIS DASHBOARD */
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                                 {/* LEFT PANEL: Salary Breakdown */}
                                 <div className="lg:col-span-1 space-y-4">
                                     <SalaryBreakdownCard breakdown={results.analysis?.salary_breakdown} />
 
                                     {/* Overall Verdict */}
                                     <Card>
-                                        <h3 className="text-sm font-semibold text-slate-700 mb-3">Overall Assessment</h3>
-                                        <div className={`p-4 rounded-lg text-center ${results.analysis?.overall_verdict === 'GOOD' ? 'bg-green-50 border-2 border-green-200' :
-                                            results.analysis?.overall_verdict === 'QUESTIONABLE' ? 'bg-amber-50 border-2 border-amber-200' :
-                                                'bg-red-50 border-2 border-red-200'
+                                        <h3 className="text-sm font-semibold text-slate-400 mb-3 uppercase tracking-wider">Overall Assessment</h3>
+                                        <div className={`p-4 rounded-xl text-center border ${results.analysis?.overall_verdict === 'GOOD' ? 'bg-emerald-500/10 border-emerald-500/20' :
+                                            results.analysis?.overall_verdict === 'QUESTIONABLE' ? 'bg-amber-500/10 border-amber-500/20' :
+                                                'bg-red-500/10 border-red-500/20'
                                             }`}>
-                                            <p className={`text-2xl font-bold ${results.analysis?.overall_verdict === 'GOOD' ? 'text-green-700' :
-                                                results.analysis?.overall_verdict === 'QUESTIONABLE' ? 'text-amber-700' :
-                                                    'text-red-700'
+                                            <p className={`text-2xl font-bold ${results.analysis?.overall_verdict === 'GOOD' ? 'text-emerald-400' :
+                                                results.analysis?.overall_verdict === 'QUESTIONABLE' ? 'text-amber-400' :
+                                                    'text-red-400'
                                                 }`}>
                                                 {results.analysis?.overall_verdict === 'GOOD' ? '✓ GOOD' :
                                                     results.analysis?.overall_verdict === 'QUESTIONABLE' ? '⚠ QUESTIONABLE' :
@@ -268,9 +258,9 @@ function App() {
 
                                     <button
                                         onClick={() => { setResults(null); setFile(null); setAnswer(null); }}
-                                        className="w-full px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all border-2 border-slate-200 font-medium"
+                                        className="w-full btn-secondary text-sm"
                                     >
-                                        ← Analyze New Salary Document
+                                        ← Analyze Another
                                     </button>
                                 </div>
 
@@ -278,7 +268,7 @@ function App() {
                                 <div className="lg:col-span-2 space-y-6">
                                     {/* Comparison Stats */}
                                     <div>
-                                        <h2 className="text-xl font-bold text-slate-900 mb-4">📊 Comparison with Standards</h2>
+                                        <h2 className="text-xl font-bold text-white mb-4">📊 Market Comparison</h2>
                                         <ComparisonStats data={results.analysis?.comparison_stats} />
                                     </div>
 
@@ -288,74 +278,78 @@ function App() {
                             </div>
                         ) : mode === 'general' ? (
                             /* GENERAL RISK DASHBOARD */
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                                 {/* LEFT PANEL: Summary */}
-                                <div className="lg:col-span-1 space-y-4">
+                                <div className="lg:col-span-1 space-y-6">
                                     <Card>
-                                        <div className="flex items-center justify-between mb-4">
-                                            <h2 className="text-lg font-semibold text-slate-900">
-                                                📊 Contract Summary
+                                        <div className="flex items-center justify-between mb-6">
+                                            <h2 className="text-lg font-semibold text-white">
+                                                Analysis Report
                                             </h2>
-                                            <Badge variant="default" icon="✅">
-                                                Complete
+                                            <Badge variant="success" icon="✓">
+                                                Done
                                             </Badge>
                                         </div>
 
-                                        <div className="space-y-4">
+                                        <div className="space-y-6">
                                             <div>
-                                                <p className="text-sm text-slate-600 mb-1">📄 File Name</p>
-                                                <p className="font-medium text-slate-900 truncate">{file?.name}</p>
+                                                <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">File Analyzed</p>
+                                                <div className="text-sm font-medium text-slate-300 break-all bg-white/5 p-3 rounded-lg border border-white/5">
+                                                    {file?.name}
+                                                </div>
                                             </div>
 
                                             {/* Clickable Summary Cards */}
-                                            <div className="grid grid-cols-2 gap-3">
+                                            <div className="grid grid-cols-2 gap-4">
                                                 {/* Total Clauses */}
                                                 <button
                                                     onClick={() => handleFilterClick('all')}
-                                                    className={`bg-slate-50 hover:bg-slate-100 rounded-xl p-4 transition-all duration-200 border-2 ${clauseFilter === 'all' ? 'border-blue-500 ring-2 ring-blue-200' : 'border-slate-200'}`}
+                                                    className={`glass rounded-xl p-4 transition-all duration-300 hover:bg-white/10 text-left group ${clauseFilter === 'all' ? 'ring-2 ring-primary-500/50' : ''}`}
                                                 >
-                                                    <p className="text-2xl font-bold text-slate-900">
+                                                    <p className="text-3xl font-bold text-white group-hover:scale-110 transition-transform origin-left">
                                                         {results.total_clauses_analyzed}
                                                     </p>
-                                                    <p className="text-xs text-slate-600 font-medium mt-1">📑 Total Clauses</p>
+                                                    <p className="text-xs text-slate-400 font-medium mt-1 uppercase">Total Clauses</p>
                                                 </button>
 
                                                 {/* Risky Clauses */}
                                                 <button
                                                     onClick={() => handleFilterClick('risky')}
-                                                    className={`bg-red-50 hover:bg-red-100 rounded-xl p-4 transition-all duration-200 border-2 ${clauseFilter === 'risky' ? 'border-red-500 ring-2 ring-red-200' : 'border-red-200'}`}
+                                                    className={`glass rounded-xl p-4 transition-all duration-300 hover:bg-white/10 text-left group border-red-500/20 ${clauseFilter === 'risky' ? 'ring-2 ring-red-500/50' : ''}`}
                                                 >
-                                                    <p className="text-2xl font-bold text-red-600">
+                                                    <p className="text-3xl font-bold text-red-400 group-hover:scale-110 transition-transform origin-left">
                                                         {results.risky_clauses_found}
                                                     </p>
-                                                    <p className="text-xs text-red-700 font-medium mt-1">⚠️ Risky Clauses</p>
+                                                    <p className="text-xs text-red-300/80 font-medium mt-1 uppercase">Risky Items</p>
                                                 </button>
                                             </div>
 
                                             {/* Overall Risk */}
-                                            <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4">
-                                                <p className="text-sm font-semibold text-blue-900 mb-2">Overall Risk Score</p>
-                                                <div className="flex items-center gap-3">
-                                                    <div className="flex-1 bg-white rounded-full h-3 shadow-inner">
-                                                        <div
-                                                            className={`h-3 rounded-full transition-all ${results.overall_risk_score >= 8 ? 'bg-red-500' :
-                                                                results.overall_risk_score >= 5 ? 'bg-amber-500' : 'bg-green-500'
-                                                                }`}
-                                                            style={{ width: `${results.overall_risk_score * 10}%` }}
-                                                        />
-                                                    </div>
-                                                    <span className="text-xl font-bold text-blue-700">
+                                            <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                                                <div className="flex justify-between items-end mb-2">
+                                                    <p className="text-sm font-semibold text-slate-300">Risk Score</p>
+                                                    <span className={`text-2xl font-bold ${results.overall_risk_score >= 8 ? 'text-red-400' :
+                                                        results.overall_risk_score >= 5 ? 'text-amber-400' : 'text-emerald-400'
+                                                        }`}>
                                                         {results.overall_risk_score}/10
                                                     </span>
                                                 </div>
-                                                <p className="text-xs text-blue-700 mt-2 font-medium">
-                                                    {results.overall_risk_category}
+                                                <div className="w-full bg-slate-700/50 rounded-full h-2 overflow-hidden">
+                                                    <div
+                                                        className={`h-full rounded-full transition-all duration-1000 ease-out ${results.overall_risk_score >= 8 ? 'bg-red-500' :
+                                                            results.overall_risk_score >= 5 ? 'bg-amber-500' : 'bg-emerald-500'
+                                                            }`}
+                                                        style={{ width: `${results.overall_risk_score * 10}%` }}
+                                                    />
+                                                </div>
+                                                <p className="text-xs text-slate-400 mt-3 font-medium text-right">
+                                                    {results.overall_risk_category} Risk Level
                                                 </p>
                                             </div>
 
                                             <button
                                                 onClick={() => { setResults(null); setFile(null); setAnswer(null); }}
-                                                className="w-full px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all border-2 border-slate-200 font-medium"
+                                                className="w-full btn-secondary text-sm"
                                             >
                                                 ← Analyze New Contract
                                             </button>
@@ -365,22 +359,25 @@ function App() {
 
                                 {/* RIGHT PANEL: Risky Clauses */}
                                 <div className="lg:col-span-2 space-y-4">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                                            {clauseFilter === 'risky' ? '⚠️ Risky Clauses' : '📑 All Clauses'}
+                                    <div className="flex items-center justify-between mb-2">
+                                        <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                                            {clauseFilter === 'risky' ? '⚠️ Risk Analysis' : '📑 Full Contract Analysis'}
                                         </h2>
-                                        <Badge variant="high" icon="Target">
-                                            {getFilteredClauses().length} Found
+                                        <Badge variant="outline">
+                                            {getFilteredClauses().length} Items
                                         </Badge>
                                     </div>
 
-                                    <div className="space-y-4 max-h-[800px] overflow-y-auto custom-scrollbar pr-2">
+                                    <div className="space-y-4 max-h-[800px] overflow-y-auto pr-2 custom-scrollbar">
                                         {getFilteredClauses().length === 0 ? (
-                                            <Card>
-                                                <div className="text-center py-8">
-                                                    <p className="text-lg font-semibold text-green-800">No Risky Clauses Detected</p>
-                                                    <p className="text-sm text-green-700">The contract appears safe.</p>
+                                            <Card className="flex flex-col items-center justify-center py-12 text-center">
+                                                <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center mb-4">
+                                                    <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                    </svg>
                                                 </div>
+                                                <p className="text-lg font-semibold text-emerald-400">No Risky Clauses Detected</p>
+                                                <p className="text-slate-400 max-w-xs mt-2">The contract appears safe based on our standard risk parameters.</p>
                                             </Card>
                                         ) : (
                                             getFilteredClauses().map((clause, index) => (
@@ -392,21 +389,21 @@ function App() {
                             </div>
                         ) : (
                             /* HR VALIDATION DASHBOARD */
-                            <div className="animate-fade-in">
+                            <div className="animate-fade-in-up">
                                 <HRValidationPanel
                                     results={results}
                                     onReset={() => { setResults(null); setFile(null); }}
                                 />
                             </div>
                         )}
-                    </>
+                    </div>
                 )}
             </main>
 
             {/* Footer */}
-            <footer className="bg-slate-900 border-t border-slate-700 mt-12 py-8">
-                <div className="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
-                    <p>AI Legal Sentinel • Powered by Gemini • Indian Law Context</p>
+            <footer className="glass border-t border-white/5 py-8 mt-auto">
+                <div className="max-w-5xl mx-auto px-6 text-center text-slate-500 text-sm">
+                    <p>© 2024 AI Legal Sentinel • Powered by Gemini Pro • India Edition</p>
                 </div>
             </footer>
 

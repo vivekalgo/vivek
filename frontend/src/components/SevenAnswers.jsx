@@ -15,29 +15,39 @@ function SevenAnswers({ answers }) {
 
     const getAnswerStyle = (answer) => {
         if (answer.includes('✓') || answer.includes('YES') || answer.includes('GOOD')) {
-            return 'bg-green-50 border-green-200'
+            return 'bg-emerald-500/10 border-emerald-500/20'
         } else if (answer.includes('✗') || answer.includes('NO -') || answer.includes('HIGH')) {
-            return 'bg-red-50 border-red-200'
+            return 'bg-red-500/10 border-red-500/20'
         } else {
-            return 'bg-amber-50 border-amber-200'
+            return 'bg-amber-500/10 border-amber-500/20'
+        }
+    }
+
+    const getAnswerTextColor = (answer) => {
+        if (answer.includes('✓') || answer.includes('YES') || answer.includes('GOOD')) {
+            return 'text-emerald-200/90'
+        } else if (answer.includes('✗') || answer.includes('NO -') || answer.includes('HIGH')) {
+            return 'text-red-200/90'
+        } else {
+            return 'text-amber-200/90'
         }
     }
 
     return (
         <div className="space-y-4">
             <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-slate-900">7 Key Questions Answered</h2>
-                <span className="text-sm text-slate-600">Auto-generated insights</span>
+                <h2 className="text-xl font-bold text-white">7 Key Questions Answered</h2>
+                <span className="text-sm text-slate-400">Auto-generated insights</span>
             </div>
 
             <div className="grid grid-cols-1 gap-4">
                 {questions.map(({ key, question, icon }) => (
-                    <Card key={key} className={`${getAnswerStyle(answers[key])} border-2 transition-all hover:shadow-md`}>
+                    <Card key={key} className={`${getAnswerStyle(answers[key])} border transition-all hover:shadow-glow hover:-translate-y-0.5`}>
                         <div className="flex items-start gap-3">
                             <span className="text-2xl flex-shrink-0">{icon}</span>
                             <div className="flex-1">
-                                <h3 className="font-semibold text-slate-900 mb-2">{question}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-line">
+                                <h3 className="font-semibold text-white mb-2">{question}</h3>
+                                <p className={`text-sm leading-relaxed whitespace-pre-line ${getAnswerTextColor(answers[key])}`}>
                                     {answers[key]}
                                 </p>
                             </div>
