@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { AuthProvider, useAuth } from './contexts/AuthContext'
+import Login from './components/Login'
 import UploadCard from './components/UploadCard'
 import RiskCard from './components/RiskCard'
 import FloatingAIAssistant from './components/FloatingAIAssistant'
@@ -13,7 +16,34 @@ import SalaryBreakdownCard from './components/SalaryBreakdownCard'
 
 const API_URL = 'https://vivek-9o1q.onrender.com'
 
-function App() {
+// Protected Route Wrapper
+const ProtectedRoute = ({ children }) => {
+    const { user, loading } = useAuth()
+
+    if (loading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-slate-950">
+                <div className="flex flex-col items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20 animate-pulse">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    if (!user) {
+        return <Navigate to="/login" />
+    }
+
+    return children
+}
+
+function Home() {
+    const { user, signOut } = useAuth()
+
     // Mode state: 'general' or 'hr'
     const [mode, setMode] = useState('general')
 
@@ -159,25 +189,43 @@ function App() {
                             </div>
                         </div>
 
-                        {/* Mode Switcher Tabs */}
-                        <div className="glass-card p-1 flex w-full md:w-auto overflow-x-auto no-scrollbar">
-                            {[
-                                { id: 'general', label: 'General Risk', emoji: '🛡️' },
-                                { id: 'hr', label: 'HR Check', emoji: '👔' },
-                                { id: 'salary', label: 'Salary', emoji: '💰' }
-                            ].map((tab) => (
+                        <div className="flex items-center gap-4">
+                            {/* Mode Switcher Tabs */}
+                            <div className="glass-card p-1 flex w-full md:w-auto overflow-x-auto no-scrollbar">
+                                {[
+                                    { id: 'general', label: 'General Risk', emoji: '🛡️' },
+                                    { id: 'hr', label: 'HR Check', emoji: '👔' },
+                                    { id: 'salary', label: 'Salary', emoji: '💰' }
+                                ].map((tab) => (
+                                    <button
+                                        key={tab.id}
+                                        onClick={() => { setMode(tab.id); setResults(null); setFile(null); }}
+                                        className={`flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${mode === tab.id
+                                            ? 'bg-primary-600 text-white shadow-lg'
+                                            : 'text-slate-400 hover:text-white hover:bg-white/5'
+                                            }`}
+                                    >
+                                        <span className="mr-2">{tab.emoji}</span>
+                                        {tab.label}
+                                    </button>
+                                ))}
+                            </div>
+
+                            {/* User Profile / Logout */}
+                            <div className="flex items-center gap-2 border-l border-white/10 pl-4 ml-2">
+                                <span className="text-sm font-medium text-slate-300 hidden sm:block">
+                                    {user.email.split('@')[0]}
+                                </span>
                                 <button
-                                    key={tab.id}
-                                    onClick={() => { setMode(tab.id); setResults(null); setFile(null); }}
-                                    className={`flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${mode === tab.id
-                                        ? 'bg-primary-600 text-white shadow-lg'
-                                        : 'text-slate-400 hover:text-white hover:bg-white/5'
-                                        }`}
+                                    onClick={signOut}
+                                    className="p-2 hover:bg-white/10 rounded-lg text-slate-400 hover:text-white transition-colors"
+                                    title="Sign Out"
                                 >
-                                    <span className="mr-2">{tab.emoji}</span>
-                                    {tab.label}
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
                                 </button>
-                            ))}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -426,6 +474,26 @@ function App() {
                 />
             )}
         </div>
+    )
+}
+
+function App() {
+    return (
+        <AuthProvider>
+            <Router>
+                <Routes>
+                    <Route path="/login" element={<Login />} />
+                    <Route
+                        path="/"
+                        element={
+                            <ProtectedRoute>
+                                <Home />
+                            </ProtectedRoute>
+                        }
+                    />
+                </Routes>
+            </Router>
+        </AuthProvider>
     )
 }
 
