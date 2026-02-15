@@ -26,7 +26,12 @@ export default function Login() {
             await signInWithEmail(email, fullName)
             setMessage('Check your email for the verification link!')
         } catch (err) {
-            setError(err.message)
+            console.error(err)
+            if (err.message && err.message.includes('rate limit')) {
+                setError('Too many login attempts. Please wait a while or use a different email address (e.g. add +1 to your gmail: name+1@gmail.com).')
+            } else {
+                setError(err.message)
+            }
         } finally {
             setLoading(false)
         }
